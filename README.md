@@ -20,7 +20,7 @@ DVR/NVR 导出的视频文件名中的时间往往是"导出时间",与画面内
 
 ## 快速开始(普通用户)
 
-1. 打开 [Releases](../../releases) 页面,下载最新 **cutbyosd_portable.zip**
+1. 打开 [Releases](https://github.com/cloudlinesky/-ocr-/releases) 页面,下载最新 **cutbyosd_portable.zip**
 2. 解压到任意目录(路径建议不含特殊字符)
 3. 双击 **`启动.bat`** 打开图形界面
 
