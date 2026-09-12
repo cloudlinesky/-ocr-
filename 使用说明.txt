@@ -1,0 +1,30 @@
+cutbyosd 拆包即用版(绿色便携)
+================================
+
+一、使用
+1. 将整个 cutbyosd 文件夹(或解压 zip)放到任意位置,如 D:\脚本库\cutbyosd
+2. 双击「启动.bat」打开图形界面
+3. 界面说明:
+   - 视频目录:选存放待剪辑视频的文件夹(支持 MP4 / H264 / H265 裸码流)
+   - 时间段文件:选时间段 txt/输入框(可选,留空则所选视频各自整段)
+   - 输出目录 / 频道名 / ffmpeg 路径(留空自动查找本包 ffmpeg)
+   - 设置 → 校准色彩,可对待剪辑视频微调 OSD 念词变色校准
+
+二、本包结构
+   runtime\    内置 Python 3.14 + 依赖(RapidOCR、OpenCV、NumPy 等),勿删
+   ffmpeg\     内置 ffmpeg.exe / ffprobe.exe,勿删
+   cut_by_osd.py       命令行版(也可 pythonw 调用)
+   cut_by_osd_gui.py   图形界面版
+   matcher.py          时间轴匹配工具
+   osd_region.json / profiles\  默认裁剪区域与配置
+   启动.bat    双击启动 GUI
+
+三、命令行用法(可选)
+   runtime\python.exe cut_by_osd.py -h
+
+四、说明
+   - 首次识别较慢属正常;结果缓存与输出默认在所选视频目录旁
+   - 裸码流(.h264/.264/.h265/.265)会自动复制封装为临时 MP4 再处理,
+     临时文件位于系统临时目录 cutbyosd_remux\ 下,可安全删除
+   - 若系统缺少 VC++ 运行库导致 ffmpeg 无法运行,可安装
+     Microsoft Visual C++ 2015-2022 Redistributable(x64)
